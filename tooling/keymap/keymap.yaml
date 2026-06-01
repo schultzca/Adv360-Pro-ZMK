@@ -103,7 +103,7 @@ layers:
       50: V
       51: B
       # Left middle thumb
-      52: Mac_Spotlight_Search  # Cmd+Space
+      52: none
       # Right middle thumb
       53: "mo 10"
       # Right hand - bottom alpha
@@ -120,7 +120,7 @@ layers:
       63: LEFT
       64: RIGHT
       # Left thumb cluster (bottom row)
-      65: "lt 4 BSPC"  # tap=Backspace, hold=Markdown layer
+      65: "lt 11 BSPC"  # tap=Backspace, hold=Markdown layer
       66: LSHFT
       67: END
       # Right thumb cluster (bottom row)
@@ -320,38 +320,9 @@ layers:
       71: "bl BL_INC"
       72: "bl BL_DEC"
 
-  # Layer 4: Markdown layer — activated by holding CAPS (lt 4 CAPS)
   - name: extra1
-    display_name: "Md"
-    bindings:
-      7: trans    # keep Mod layer (mo 3) accessible
-      # --- RIGHT HAND: headings (top row: Y=H1, U=H2, I=H3) ---
-      22: macro_md_h1           # Y - "# "
-      23: macro_md_h2           # U - "## "
-      24: macro_md_h3           # I - "### "
-      # --- RIGHT HAND: structure (home row: H=list, J=task, K=code, L=link, ;=strikethrough) ---
-      40: macro_md_listitem     # H - "- "
-      41: macro_md_taskitem     # J - "- [ ] "
-      42: macro_md_code_inline  # K - auto-pair backticks ``
-      43: macro_md_link         # L - "[]()" with cursor on link text
-      44: Mac_Strike_Through_Text  # ; - Cmd+Shift+X strikethrough
-      # --- RIGHT HAND: emphasis (bottom row: N=italic, M=bold) ---
-      54: macro_md_italic       # N - auto-pair __ (italic)
-      55: macro_md_bold         # M - auto-pair **** (bold)
-      # Thumb clusters: pass through so space/enter/backspace keep working
-      35: trans
-      36: trans
-      37: trans
-      38: trans
-      52: trans
-      53: trans
-      62: trans
-      65: trans   # the BSPC/layer key itself
-      66: trans
-      67: trans
-      68: trans
-      69: trans
-      70: trans
+    display_name: "Pink"
+    status: reserved
 
   - name: extra2
     display_name: "Purple"
@@ -466,6 +437,38 @@ layers:
       52: trans
       53: trans   # layer key itself
       65: trans
+      66: trans
+      67: trans
+      68: trans
+      69: trans
+      70: trans
+
+  # Layer 11: Markdown layer — activated by holding left-thumb BSPC (lt 11 BSPC)
+  - name: md
+    display_name: "Md"
+    bindings:
+      7: trans    # keep Mod layer (mo 3) accessible
+      # --- RIGHT HAND: headings (top row: Y=H1, U=H2, I=H3) ---
+      22: macro_md_h1           # Y - "# "
+      23: macro_md_h2           # U - "## "
+      24: macro_md_h3           # I - "### "
+      # --- RIGHT HAND: structure (home row: H=list, J=task, K=code, L=link, ;=strikethrough) ---
+      40: macro_md_listitem     # H - "- "
+      41: macro_md_taskitem     # J - "- [ ] "
+      42: macro_md_code_inline  # K - auto-pair backticks ``
+      43: macro_md_link         # L - "[]()" with cursor on link text
+      44: Mac_Strike_Through_Text  # ; - Cmd+Shift+X strikethrough
+      # --- RIGHT HAND: emphasis (bottom row: N=italic, M=bold) ---
+      54: macro_md_italic       # N - auto-pair __ (italic)
+      55: macro_md_bold         # M - auto-pair **** (bold)
+      # Thumb clusters: pass through so space/enter/backspace keep working
+      35: trans
+      36: trans
+      37: trans
+      38: trans
+      52: trans
+      53: trans
+      65: trans   # the BSPC/layer key itself
       66: trans
       67: trans
       68: trans
