@@ -47,6 +47,16 @@ PASSTHROUGH_BEHAVIORS = {
 MACROS = {
     "macro_quotes", "macro_dquotes", "macro_braces", "macro_parens",
     "macro_brackets", "macro_kinesis", "macro_ver",
+    # Symbol layer: auto-pair and compound operators
+    "macro_angle",
+    "macro_arrow", "macro_fat_arrow",
+    "macro_neq", "macro_deq", "macro_lte", "macro_gte",
+    # Markdown layer: headings
+    "macro_md_h1", "macro_md_h2", "macro_md_h3",
+    # Markdown layer: formatting
+    "macro_md_bold", "macro_md_italic", "macro_md_code_inline", "macro_md_link",
+    # Markdown layer: list items
+    "macro_md_listitem", "macro_md_taskitem",
     "Win_Cut", "Win_Copy", "Win_Paste", "Win_Select_All", "Win_Undo",
     "Win_Desktop", "Win_File_Explorer", "Win_Snip_Tool", "Win_Show_All_Windows",
     "Win_Close_Program", "Win_Settings_Menu", "Win_Lock_PC",
@@ -192,7 +202,7 @@ def format_row_with_starts(tokens: list[str], starts: list[int]) -> str:
         target = starts[idx] if idx < len(starts) else cursor + 1
         if idx == 0:
             target = 0
-        if target < cursor:
+        if target <= cursor:
             target = cursor + 1
         out.append(" " * (target - cursor))
         out.append(token)

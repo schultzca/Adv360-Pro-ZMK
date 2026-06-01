@@ -120,7 +120,7 @@ layers:
       63: LEFT
       64: RIGHT
       # Left thumb cluster (bottom row)
-      65: BSPC
+      65: "lt 4 BSPC"  # tap=Backspace, hold=Markdown layer
       66: LSHFT
       67: END
       # Right thumb cluster (bottom row)
@@ -191,7 +191,7 @@ layers:
       50: V
       51: B
       52: HOME
-      53: PAGE_UP
+      53: PG_UP
       54: N
       55: KP_N1
       56: KP_N2
@@ -308,6 +308,9 @@ layers:
       7: trans
       20: bootloader
       21: bootloader
+      22: Mac_Mission_Control  # Y - expose all windows (Ctrl+Up)
+      23: Mac_Snip_Tool        # U - screenshot to clipboard
+      26: Mac_Close_Program    # P - quit app (Cmd+Q)
       28: studio_unlock
       37: "bt BT_CLR"
       39: "stp STP_BAT"
@@ -317,10 +320,38 @@ layers:
       71: "bl BL_INC"
       72: "bl BL_DEC"
 
-  # Reserved layers for ZMK Studio
+  # Layer 4: Markdown layer — activated by holding CAPS (lt 4 CAPS)
   - name: extra1
-    display_name: "Red"
-    status: reserved
+    display_name: "Md"
+    bindings:
+      7: trans    # keep Mod layer (mo 3) accessible
+      # --- RIGHT HAND: headings (top row: Y=H1, U=H2, I=H3) ---
+      22: macro_md_h1           # Y - "# "
+      23: macro_md_h2           # U - "## "
+      24: macro_md_h3           # I - "### "
+      # --- RIGHT HAND: structure (home row: H=list, J=task, K=code, L=link, ;=strikethrough) ---
+      40: macro_md_listitem     # H - "- "
+      41: macro_md_taskitem     # J - "- [ ] "
+      42: macro_md_code_inline  # K - auto-pair backticks ``
+      43: macro_md_link         # L - "[]()" with cursor on link text
+      44: Mac_Strike_Through_Text  # ; - Cmd+Shift+X strikethrough
+      # --- RIGHT HAND: emphasis (bottom row: N=italic, M=bold) ---
+      54: macro_md_italic       # N - auto-pair __ (italic)
+      55: macro_md_bold         # M - auto-pair **** (bold)
+      # Thumb clusters: pass through so space/enter/backspace keep working
+      35: trans
+      36: trans
+      37: trans
+      38: trans
+      52: trans
+      53: trans
+      62: trans
+      65: trans   # the BSPC/layer key itself
+      66: trans
+      67: trans
+      68: trans
+      69: trans
+      70: trans
 
   - name: extra2
     display_name: "Purple"
@@ -342,38 +373,101 @@ layers:
   - name: vim_nav
     display_name: "Vim"
     bindings:
-      # H, J, K, L -> Left, Down, Up, Right
-      40: LEFT
-      41: DOWN
-      42: UP
-      43: RIGHT
+      # Right hand - top row: line-start, word-left, word-right, line-end, fwd-delete
+      22: "LG(LEFT)"    # Y - beginning of line (Mac: Cmd+Left)
+      23: "LA(LEFT)"    # U - word left       (Mac: Option+Left)
+      24: "LA(RIGHT)"   # I - word right      (Mac: Option+Right)
+      25: "LG(RIGHT)"   # O - end of line     (Mac: Cmd+Right)
+      26: DEL           # P - forward delete
+      # Right hand - home row: HJKL arrows + backspace
+      40: LEFT          # H
+      41: DOWN          # J
+      42: UP            # K
+      43: RIGHT         # L
+      44: BSPC          # ; - backspace
+      # Right hand - bottom row: page navigation
+      54: PG_UP         # N
+      55: PG_DN         # M
+      # Left hand - home row: Mac editing + navigation shortcuts
+      29: Mac_Select_All  # A - Cmd+A
+      30: "LG(UP)"        # S - Cmd+Up (top of document)
+      31: "LG(DOWN)"      # D - Cmd+Down (bottom of document)
+      32: "LA(BSPC)"      # F - Option+Backspace (delete word backward)
+      33: "LG(BSPC)"      # G - Cmd+Backspace (delete to line start)
+      # Left hand - bottom row: Mac clipboard
+      47: Mac_Undo        # Z - Cmd+Z
+      48: Mac_Cut         # X - Cmd+X
+      49: Mac_Copy        # C - Cmd+C
+      50: Mac_Paste       # V - Cmd+V
+      # Left hand - top row: Spotlight
+      19: Mac_Spotlight_Search  # T - Spotlight search (easy bi-manual trigger)
+      # Thumb clusters: pass through so space/enter/backspace keep working
+      35: trans
+      36: trans
+      37: trans
+      38: trans
+      52: trans
+      53: trans
+      65: trans
+      66: trans
+      67: trans
+      68: trans   # layer key itself
+      69: trans
+      70: trans
 
   # Layer 10: Symbol layer
   - name: symbol
     display_name: "Sym"
     bindings:
-      7: trans
-      # E, R -> {, }
-      17: LBRC
-      18: RBRC
-      # D, F -> (, )
-      31: LPAR
-      32: RPAR
-      # C, V -> [, ]
-      49: LBKT
-      50: RBKT
-      # B -> <
-      51: LT
-      # N -> >
-      54: GREATER_THAN
-      # Right hand home row: H, J, K, L, ; -> -, =, !, &, `
-      40: MINUS
-      41: EQUAL
-      42: EXCLAMATION
-      43: AMPS
-      44: GRAVE
-      # M, comma, dot, / -> ., ,, :, ;
-      55: PERIOD
-      56: COMMA
-      57: COLON
-      58: SEMI
+      7: trans    # keep Mod layer (mo 3) accessible
+      # --- LEFT HAND: enclosures (top row, mnemonics: Q=', W=", E=[], R={}, T=()) ---
+      15: macro_quotes      # Q - auto-pair single quotes ''
+      16: macro_dquotes     # W - auto-pair double quotes ""
+      17: macro_brackets    # E - auto-pair square brackets []
+      18: macro_braces      # R - auto-pair curly braces {}
+      19: macro_parens      # T - auto-pair parentheses ()
+      # --- LEFT HAND: special chars (home row: A=@ S=# D=$ F=| G=`) ---
+      29: AT                # A - at-sign @
+      30: HASH              # S - hash/pound #
+      31: DOLLAR            # D - dollar $
+      32: PIPE              # F - pipe |
+      33: GRAVE             # G - backtick `
+      # --- LEFT HAND: misc (bottom row: Z=~ X=% C=^ V=\ B=!) ---
+      47: TILDE             # Z - tilde ~
+      48: PRCNT             # X - percent %
+      49: CARET             # C - caret ^
+      50: BSLH              # V - backslash \
+      51: EXCL              # B - exclamation !
+      # --- RIGHT HAND: operators (top row: Y=<> U=* I=/ O=? P=+ \=⌘`) ---
+      22: macro_angle       # Y - auto-pair angle brackets <>
+      23: STAR              # U - asterisk/multiply *
+      24: FSLH              # I - forward slash /
+      25: QMARK             # O - question mark ?
+      26: PLUS              # P - plus +
+      27: "LG(GRAVE)"       # \ - cycle windows of same app (Cmd+`)
+      # --- RIGHT HAND: operators (home row: H=- J=_ K== L=: ;=& '==>) ---
+      40: MINUS             # H - minus/dash -
+      41: UNDER             # J - underscore _
+      42: EQUAL             # K - equals =
+      43: COLON             # L - colon :
+      44: AMPS              # ; - ampersand &
+      45: macro_fat_arrow   # ' - fat arrow =>
+      # --- RIGHT HAND: compound operators (bottom row) ---
+      54: macro_neq         # N - not-equal !=
+      55: macro_deq         # M - double-equal ==
+      56: macro_lte         # , - less-than-or-equal <=
+      57: macro_gte         # . - greater-than-or-equal >=
+      58: macro_arrow       # / - arrow ->
+      # Thumb clusters: pass through
+      35: trans
+      36: trans
+      37: trans
+      38: trans
+      52: trans
+      53: trans   # layer key itself
+      65: trans
+      66: trans
+      67: trans
+      68: trans
+      69: trans
+      70: trans

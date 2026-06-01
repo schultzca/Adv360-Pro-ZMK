@@ -1,4 +1,4 @@
-<svg width="1068" height="3507" viewBox="0 0 1068 3507" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="7476" height="549" viewBox="0 0 7476 549" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <style>/* inherit to force styles through use tags */
 svg path {
     fill: inherit;
@@ -437,7 +437,7 @@ path.combo {
 </a></g>
 </g>
 </g>
-<g transform="translate(30, 493)" class="layer-Kp">
+<g transform="translate(1098, 0)" class="layer-Kp">
 <text x="0" y="28" class="label" id="Kp">Kp:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(35, 42)" class="key keypos-0">
@@ -745,7 +745,7 @@ path.combo {
 </a></g>
 </g>
 </g>
-<g transform="translate(30, 986)" class="layer-Fn">
+<g transform="translate(2166, 0)" class="layer-Fn">
 <text x="0" y="28" class="label" id="Fn">Fn:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(35, 42)" class="key keypos-0">
@@ -1052,7 +1052,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(30, 1479)" class="layer-Mod">
+<g transform="translate(3234, 0)" class="layer-Mod">
 <text x="0" y="28" class="label" id="Mod">Mod:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(35, 42)" class="key keypos-0">
@@ -1328,7 +1328,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(30, 1972)" class="layer-Md">
+<g transform="translate(4302, 0)" class="layer-Md">
 <text x="0" y="28" class="label" id="Md">Md:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(35, 42)" class="key keypos-0">
@@ -1597,7 +1597,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(30, 2465)" class="layer-Vim">
+<g transform="translate(5370, 0)" class="layer-Vim">
 <text x="0" y="28" class="label" id="Vim">Vim:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(35, 42)" class="key keypos-0">
@@ -1866,7 +1866,7 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(30, 2958)" class="layer-Sym">
+<g transform="translate(6438, 0)" class="layer-Sym">
 <text x="0" y="28" class="label" id="Sym">Sym:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(35, 42)" class="key keypos-0">

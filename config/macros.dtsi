@@ -222,3 +222,120 @@
     bindings = <&mkp MB1 &mkp MB1>;
     display-name = "Double Click";
   };
+
+  // --- Symbol layer: bracket/quote auto-pairs with cursor ---
+  macro_angle: macro_angle {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp LT>, <&kp GT>, <&kp LEFT>;
+    display-name = "Angle Brackets <>";
+  };
+
+  // --- Symbol layer: compound operators ---
+  macro_arrow: macro_arrow {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp MINUS>, <&kp GT>;
+    display-name = "Arrow ->";
+  };
+
+  macro_fat_arrow: macro_fat_arrow {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp EQUAL>, <&kp GT>;
+    display-name = "Fat Arrow =>";
+  };
+
+  macro_neq: macro_neq {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp EXCL>, <&kp EQUAL>;
+    display-name = "Not Equal !=";
+  };
+
+  macro_deq: macro_deq {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp EQUAL>, <&kp EQUAL>;
+    display-name = "Double Equal ==";
+  };
+
+  macro_lte: macro_lte {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp LT>, <&kp EQUAL>;
+    display-name = "Less Than Or Equal <=";
+  };
+
+  macro_gte: macro_gte {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp GT>, <&kp EQUAL>;
+    display-name = "Greater Than Or Equal >=";
+  };
+
+  // --- Markdown layer: headings ---
+  macro_md_h1: macro_md_h1 {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp HASH>, <&kp SPACE>;
+    display-name = "Markdown H1";
+  };
+
+  macro_md_h2: macro_md_h2 {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp HASH>, <&kp HASH>, <&kp SPACE>;
+    display-name = "Markdown H2";
+  };
+
+  macro_md_h3: macro_md_h3 {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp HASH>, <&kp HASH>, <&kp HASH>, <&kp SPACE>;
+    display-name = "Markdown H3";
+  };
+
+  // --- Markdown layer: formatting (auto-paired, cursor inside) ---
+  macro_md_bold: macro_md_bold {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp STAR>, <&kp STAR>, <&kp STAR>, <&kp STAR>, <&kp LEFT>, <&kp LEFT>;
+    display-name = "Markdown Bold **";
+  };
+
+  macro_md_italic: macro_md_italic {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp UNDER>, <&kp UNDER>, <&kp LEFT>;
+    display-name = "Markdown Italic _";
+  };
+
+  macro_md_code_inline: macro_md_code_inline {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp GRAVE>, <&kp GRAVE>, <&kp LEFT>;
+    display-name = "Markdown Code Inline";
+  };
+
+  macro_md_link: macro_md_link {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp LBKT>, <&kp RBKT>, <&kp LPAR>, <&kp RPAR>, <&kp LEFT>, <&kp LEFT>, <&kp LEFT>;
+    display-name = "Markdown Link []()";
+  };
+
+  // --- Markdown layer: list items ---
+  macro_md_listitem: macro_md_listitem {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp MINUS>, <&kp SPACE>;
+    display-name = "Markdown List Item";
+  };
+
+  macro_md_taskitem: macro_md_taskitem {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp MINUS>, <&kp SPACE>, <&kp LBKT>, <&kp SPACE>, <&kp RBKT>, <&kp SPACE>;
+    display-name = "Markdown Task Item";
+  };

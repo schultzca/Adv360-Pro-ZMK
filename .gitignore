@@ -1,1 +1,7 @@
 /firmware/*.uf2
+
+# Generated debug artifacts from generate_svg.py
+assets/*.debug.yaml
+
+# Python cache
+tooling/keymap/__pycache__/
